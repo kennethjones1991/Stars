@@ -8,13 +8,15 @@
 
 import UIKit
 
-class StarsViewController: UIViewController {
+class StarsViewController: UIViewController, UITableViewDataSource {
 
     // MARK: IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var distanceTextField: UITextField!
+    
+    let starController = StarController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,29 @@ class StarsViewController: UIViewController {
     }
     
     @IBAction func createButtonTapped(_ sender: Any) {
+        guard let starName = nameTextField.text,
+            let distanceInLightYears = distanceTextField.text,
+            let distance = Double(distanceInLightYears),
+            !starName.isEmpty else { return }
+        
+        starController.createStar(with: starName, distance: distance)
+        self.tableView.reloadData()
     }
-    // MARK: UITableViewDataSource
     
+    // MARK: UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return starController.stars.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = self.tableView.dequeueReusableCell(withIdentifier: "StarCell") as? StarTableViewCell else { return UITableViewCell() }
+        
+        let star = starController.stars[indexPath.row]
+        
+        cell.star = star
+        
+        return cell
+    }
 }
 
 class StarTableViewCell: UITableViewCell {
@@ -37,5 +59,15 @@ class StarTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
     
+    var star: Star? {
+        didSet {
+            self.updateViews()
+        }
+    }
     
+    func updateViews() {
+        guard let star = star else { return }
+        nameLabel.text = star.name
+        distanceLabel.text = "\(star.distance) lights years away"
+    }
 }

@@ -13,6 +13,8 @@
 		20D7CC6024539AEA00E3357A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20D7CC5E24539AEA00E3357A /* Main.storyboard */; };
 		20D7CC6224539AEB00E3357A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20D7CC6124539AEB00E3357A /* Assets.xcassets */; };
 		20D7CC6524539AEB00E3357A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20D7CC6324539AEB00E3357A /* LaunchScreen.storyboard */; };
+		20D7CC6D2453A2C400E3357A /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D7CC6C2453A2C400E3357A /* Star.swift */; };
+		20D7CC6F2453A36C00E3357A /* StarsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D7CC6E2453A36C00E3357A /* StarsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		20D7CC6124539AEB00E3357A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20D7CC6424539AEB00E3357A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20D7CC6624539AEB00E3357A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20D7CC6C2453A2C400E3357A /* Star.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
+		20D7CC6E2453A36C00E3357A /* StarsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +67,18 @@
 				20D7CC6124539AEB00E3357A /* Assets.xcassets */,
 				20D7CC6324539AEB00E3357A /* LaunchScreen.storyboard */,
 				20D7CC6624539AEB00E3357A /* Info.plist */,
+				20D7CC6C2453A2C400E3357A /* Star.swift */,
+				20D7CC702453A37400E3357A /* Model Controller */,
 			);
 			path = Stars;
+			sourceTree = "<group>";
+		};
+		20D7CC702453A37400E3357A /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				20D7CC6E2453A36C00E3357A /* StarsController.swift */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +155,8 @@
 				20D7CC5D24539AEA00E3357A /* StarsViewController.swift in Sources */,
 				20D7CC5924539AEA00E3357A /* AppDelegate.swift in Sources */,
 				20D7CC5B24539AEA00E3357A /* SceneDelegate.swift in Sources */,
+				20D7CC6D2453A2C400E3357A /* Star.swift in Sources */,
+				20D7CC6F2453A36C00E3357A /* StarsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
